@@ -1,6 +1,7 @@
 package adactin.booking;
 
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -48,10 +49,21 @@ public class AdactinLaunchBooking extends AdactinUtils{
 		dropDownElement(bookHotelPageElements.getFldExpireYear(), "2022");
 		typeValue(bookHotelPageElements.getFldCvvNumber(), "123");
 		elementToClick(bookHotelPageElements.getBtnSubmit());
-		
 		Thread.sleep(5000);
 		AdactinBookingConfirmPage bookConfirmpageElements = new AdactinBookingConfirmPage(driver);
 		getTextFromElement(bookConfirmpageElements.getOrderNumber());
 		
+	}
+	
+	/**
+	 * @author arsheena
+	 * @throws InterruptedException
+	 */
+	@Test
+	public void TC002() throws InterruptedException {
+		int i = 88;
+		if (i==88) {
+			System.out.println("Code From Arsheena branch");
+		}
 	}
 }
