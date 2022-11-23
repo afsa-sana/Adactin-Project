@@ -2,6 +2,7 @@ package adactin.booking;
 
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import adactin.pages.AdactinBookHotelPage;
@@ -53,5 +54,16 @@ public class AdactinLaunchBooking extends AdactinUtils{
 		AdactinBookingConfirmPage bookConfirmpageElements = new AdactinBookingConfirmPage(driver);
 		getTextFromElement(bookConfirmpageElements.getOrderNumber());
 		
+	}
+	
+	public void tc003() {
+		int xx = 5555;
+		if (xx==55555) {
+			Assert.fail();
+		}else {
+			System.out.println("Test case from Raseem");
+		}
+		
+
 	}
 }
