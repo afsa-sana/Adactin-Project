@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AdactinBookingConfirmPage {
 	
-	
-	
 	public AdactinBookingConfirmPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
