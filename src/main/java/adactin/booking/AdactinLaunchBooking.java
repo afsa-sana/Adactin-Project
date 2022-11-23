@@ -1,6 +1,7 @@
 package adactin.booking;
 
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -25,9 +26,7 @@ public class AdactinLaunchBooking extends AdactinUtils{
 		elementToClick(loginPageElements.getbtnLogin());
 		
 		AdactinSearchHotelPage searchRoomPageElements = new AdactinSearchHotelPage(driver);
-		dropDownElement(searchRoomPageElements.getSearchLocation(), "London");
-		dropDownElement(searchRoomPageElements.getHotelName(), "Hotel Sunshine");
-		dropDownElement(searchRoomPageElements.getRoomType(), "Super Deluxe");
+		dropDownElement(searchRoomPageElements.getRoomType(), "Delux");
 		dropDownElement(searchRoomPageElements.getNumberOfRooms(), "3");
 		typeValue(searchRoomPageElements.getCheckInDate(), "22/11/2022");
 		typeValue(searchRoomPageElements.getCheckOutDate(), "24/11/2022");
@@ -49,13 +48,13 @@ public class AdactinLaunchBooking extends AdactinUtils{
 		dropDownElement(bookHotelPageElements.getFldExpireYear(), "2022");
 		typeValue(bookHotelPageElements.getFldCvvNumber(), "123");
 		elementToClick(bookHotelPageElements.getBtnSubmit());
-		
 		Thread.sleep(5000);
 		AdactinBookingConfirmPage bookConfirmpageElements = new AdactinBookingConfirmPage(driver);
 		getTextFromElement(bookConfirmpageElements.getOrderNumber());
 		
 	}
 	
+	@Test
 	public void tc003() {
 		int xx = 5555;
 		if (xx==55555) {
@@ -63,7 +62,20 @@ public class AdactinLaunchBooking extends AdactinUtils{
 		}else {
 			System.out.println("Test case from Raseem");
 		}
+	}
 		
+
+
+	/**
+	 * @author arsheena
+	 * @throws InterruptedException
+	 */
+	@Test
+	public void TC002() throws InterruptedException {
+		int i = 88;
+		if (i==88) {
+			System.out.println("Code From Arsheena branch");
+		}
 
 	}
 }
