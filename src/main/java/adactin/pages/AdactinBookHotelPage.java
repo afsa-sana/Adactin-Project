@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AdactinBookHotelPage {
+import adactin.utils.AdactinUtils;
+
+public class AdactinBookHotelPage extends AdactinUtils{
 
 	public AdactinBookHotelPage(WebDriver driver) {
 		PageFactory.initElements(driver,this);
@@ -39,44 +41,43 @@ public class AdactinBookHotelPage {
 	@FindBy(xpath="//input[@name='cc_cvv']")
 	private WebElement fldCvvNumber;
 	
-	
-	public WebElement getFldFirstName() {
-		return fldFirstName;
-	}
-
-	public WebElement getFldLastName() {
-		return fldLastName;
-	}
-
-	public WebElement getFldBillingAddress() {
-		return fldBillingAddress;
-	}
-
-	public WebElement getFldCreditCard() {
-		return fldCreditCard;
-	}
-
-	public WebElement getFldCreditCardType() {
-		return fldCreditCardType;
-	}
-
-	public WebElement getFldExpireMonth() {
-		return fldExpireMonth;
-	}
-
-	public WebElement getFldExpireYear() {
-		return fldExpireYear;
-	}
-
-	public WebElement getFldCvvNumber() {
-		return fldCvvNumber;
-	}
-
-	public WebElement getBtnSubmit()
-	{
-		return btnSubmit;
+	public void enterFirstName() {
+		typeValue(fldFirstName, "Afsana");
 	}
 	
+	public void enterLastName() {
+		typeValue(fldLastName, "sana");
+	}
+	
+	public void enterBillingAddress() {
+	    typeValue(fldBillingAddress, "No.30 A,Raju Street,Melkalvoy.603108");
+	}
+	
+	public void enterCreditCardNumber() {
+		typeValue(fldCreditCard, "1234567898765432");
+	}
+	
+	public void selectCreditCardType() {
+		dropDownElement(fldCreditCardType, "VISA");
+	}
+	
+	public void selectExpiryMonth() {
+		dropDownElement(fldExpireMonth, "12");
+	}
+	
+	public void selectExpiryYear() {
+		dropDownElement(fldExpireYear, "2022");
+	}
+	
+	public void enterCvvNumber() {
+		typeValue(fldCvvNumber, "123");
+	}
+	
+	public AdactinBookingConfirmPage selectBookNowButton(WebDriver driver) {
+		elementToClick(btnSubmit);
+		return new AdactinBookingConfirmPage(driver);
+
+	}
 	
 	
 }
